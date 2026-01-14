@@ -19,6 +19,11 @@
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p>{{ courseGoal }}</p>
-    </section>
+      <p>{{ outputGoal() }}</p>
+      <p>{{ 1 + 1 }}</p>
+      <p>Learn more <a v-bind:href= "vueLink">about Vue</a>.</p>
+      <!-- v-bind:を使用して、vueで定義したリンクをaタグのhref属性にバインドしています。 -->
+      <!-- {{}}は、HTMLで表示される部分にのみ使用され、属性には使用できません。 -->
+   </section>
   </body>
 </html>
