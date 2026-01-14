@@ -9,7 +9,6 @@ const app = Vue.createApp({
   methods: {
     calculateAge() {
       return this.age + 5;
-      //+=5は使わない。なぜなら、+=は代入演算子であり、this.ageの値を直接変更してしまうから。
     },
     calculateRandom() {
       return Math.random();
