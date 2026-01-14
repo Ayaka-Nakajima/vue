@@ -1,4 +1,5 @@
 Vue.createApp({
+    //l4  function addGoal() {
     data: function() {
         return {
             goals: [],
@@ -8,25 +9,31 @@ Vue.createApp({
     methods: {
         addGoal() {
             this.goals.push(this.enteredValue);
+            //l8      listEl.appendChild(listItemEl);
             this.enteredValue = '';
+            //l9      inputEl.value = '';
         }
     }
-}).mount('#app');// HTMLにある要素を取得して操作する従来の方法
-//#appはHTMLのid属性がappの要素を指す
+}).mount('#app');
 
 
 
+//l1  const buttonEl = document.querySelector('button');
+//l2  const inputEl = document.querySelector('input');
+//l3  const listEl = document.querySelector('ul');
+//jsではHTML要素を操作するために上記のように要素を取得する必要がある
+//Vueではmount('#app')のように一度に取得できる
 
-// const buttonEl = document.querySelector('button');
-// const inputEl = document.querySelector('input');
-// const listEl = document.querySelector('ul');
+//l5      const enteredValue = inputEl.value;
+//HTMLにv-modelがあるため、inputEl.valueを使わなくてもよい
 
-// function addGoal() {
-//     const enteredValue = inputEl.value;
-//     const listItemEl = document.createElement('li');
-//     listItemEl.textContent = enteredValue;
-//     listEl.appendChild(listItemEl);
-//     inputEl.value = '';
-// }
+//l6      const listItemEl = document.createElement('li');
+//HTMLにv-forがあるため、要素をjs側で作成する必要はない
 
-// buttonEl.addEventListener('click', addGoal);
+//l7      listItemEl.textContent = enteredValue;
+//HTMLに{{goal}}があるため、js側でテキストを設定する必要はない
+
+//l10 }
+
+//l11 buttonEl.addEventListener('click', addGoal);
+//v-on:click="addGoal"があるため、js側でイベントリスナーを追加する必要はない
